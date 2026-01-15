@@ -58,6 +58,13 @@ body {
 .h-6 { height: 1.5rem; }
 .w-8 { width: 2rem; }
 .h-8 { height: 2rem; }
+.w-10 { width: 2.5rem; }
+.h-10 { height: 2.5rem; }
+.w-12 { width: 3rem; }
+.h-12 { height: 3rem; }
+.w-64 { width: 16rem; }
+.w-full { width: 100%; }
+.h-24 { height: 6rem; }
 
 /* Position */
 .sticky { position: sticky; }
@@ -77,10 +84,12 @@ body {
 .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
 .py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
 .pt-4 { padding-top: 1rem; }
+.mt-1 { margin-top: 0.25rem; }
 .mt-6 { margin-top: 1.5rem; }
 .mt-8 { margin-top: 2rem; }
 .mt-12 { margin-top: 3rem; }
 .mt-4 { margin-top: 1rem; }
+.ml-2 { margin-left: 0.5rem; }
 .mb-1 { margin-bottom: 0.25rem; }
 .mb-2 { margin-bottom: 0.5rem; }
 .mb-3 { margin-bottom: 0.75rem; }
@@ -90,6 +99,7 @@ body {
 
 /* Typography */
 .text-center { text-align: center; }
+.text-left { text-align: left; }
 .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
 .text-2xl { font-size: 1.5rem; line-height: 2rem; }
 .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
@@ -98,17 +108,20 @@ body {
 .text-xs { font-size: 0.75rem; line-height: 1rem; }
 .font-bold { font-weight: 700; }
 .font-semibold { font-weight: 600; }
+.font-medium { font-weight: 500; }
 .text-white { color: #ffffff; }
 .text-slate-900 { color: #0f172a; }
 .text-slate-800 { color: #1e293b; }
 .text-slate-700 { color: #334155; }
 .text-slate-600 { color: #475569; }
 .text-slate-500 { color: #64748b; }
+.text-gray-200 { color: #e5e7eb; }
 .text-gray-300 { color: #d1d5db; }
 .text-gray-400 { color: #9ca3af; }
 .text-gray-500 { color: #6b7280; }
 .text-blue-300 { color: #93c5fd; }
 .text-blue-400 { color: #60a5fa; }
+.text-teal-300 { color: #5eead4; }
 .text-teal-600 { color: #0d9488; }
 .text-orange-500 { color: #f59e0b; }
 .text-red-300 { color: #fca5a5; }
@@ -122,6 +135,9 @@ body {
 .text-opacity-80 { opacity: 0.8; }
 .text-opacity-90 { opacity: 0.9; }
 .opacity-75 { opacity: 0.75; }
+.italic { font-style: italic; }
+.leading-relaxed { line-height: 1.625; }
+.whitespace-pre-wrap { white-space: pre-wrap; }
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
@@ -161,6 +177,7 @@ body {
 .bg-gray-700 { background-color: #374151; }
 .bg-gray-800 { background-color: #1f2937; }
 .bg-gray-900 { background-color: #111827; }
+.bg-transparent { background-color: transparent; }
 .bg-red-500.bg-opacity-10 { background-color: rgba(239, 68, 68, 0.1); }
 .bg-green-500.bg-opacity-10 { background-color: rgba(34, 197, 94, 0.1); }
 .bg-yellow-500.bg-opacity-10 { background-color: rgba(245, 158, 11, 0.1); }
@@ -179,13 +196,19 @@ body {
 .border-2 { border-width: 2px; border-style: solid; }
 .border-b { border-bottom-width: 1px; border-style: solid; }
 .border-t { border-top-width: 1px; border-style: solid; }
+.border-r { border-right-width: 1px; border-style: solid; }
+.border-dashed { border-style: dashed; }
 .border-gray-700 { border-color: #374151; }
 .border-gray-500 { border-color: #6b7280; }
 .border-slate-200 { border-color: #e2e8f0; }
 .border-slate-300 { border-color: #cbd5e1; }
 .border-gray-600 { border-color: #4b5563; }
+.border-teal-500 { border-color: #0ea5a8; }
+.border-teal-400 { border-color: #2dd4bf; }
 .border-green-500 { border-color: #22c55e; }
+.border-blue-400 { border-color: #60a5fa; }
 .border-blue-500 { border-color: #3b82f6; }
+.border-orange-400 { border-color: #fb923c; }
 .border-orange-500 { border-color: #f97316; }
 .border-red-500 { border-color: #ef4444; }
 .border-white { border-color: #ffffff; }
@@ -212,6 +235,8 @@ body {
 .hover\:bg-gray-600:hover { background-color: #4b5563; }
 .hover\:bg-blue-700:hover { background-color: #1d4ed8; }
 .hover\:text-white:hover { color: #ffffff; }
+.hover\:bg-slate-100:hover { background-color: #f1f5f9; }
+.hover\:text-slate-900:hover { color: #0f172a; }
 .animate-fadeIn { animation: fadeIn 0.4s ease forwards; }
 .rotate-\[-90deg\] { transform: rotate(-90deg); }
 
@@ -224,6 +249,8 @@ body {
 .hidden { display: none; }
 
 /* Misc */
+.outline-none { outline: none; }
+.resize-none { resize: none; }
 
 /* Responsive paddings */
 @media (min-width: 640px) {

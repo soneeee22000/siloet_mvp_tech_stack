@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Layers, GitCompare, Sun, Moon } from 'lucide-react';
+import { Layers, GitCompare, LayoutDashboard, Sun, Moon } from 'lucide-react';
 
 type Props = {
   theme: 'light' | 'dark';
@@ -22,6 +22,12 @@ const Navigation: React.FC<Props> = ({ theme, onToggleTheme }) => {
       name: 'Comparison',
       icon: GitCompare,
       description: 'Approach Comparison'
+    },
+    {
+      path: '/ui-mockup',
+      name: 'UI Mockup',
+      icon: LayoutDashboard,
+      description: 'Product Experience'
     }
   ];
 
