@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Layers, GitCompare, LayoutDashboard, Map, Sun, Moon } from 'lucide-react';
+import { Layers, GitCompare, LayoutDashboard, Map, DollarSign, Sun, Moon } from 'lucide-react';
 
 type Props = {
   theme: 'light' | 'dark';
@@ -34,6 +34,12 @@ const Navigation: React.FC<Props> = ({ theme, onToggleTheme }) => {
       name: 'RoadMap',
       icon: Map,
       description: 'Development Timeline'
+    },
+    {
+      path: '/financials',
+      name: 'Financials',
+      icon: DollarSign,
+      description: 'Cost Analysis'
     }
   ];
 
