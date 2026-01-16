@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DollarSign, TrendingDown, TrendingUp, AlertCircle, CheckCircle, Zap, Users, Building } from 'lucide-react';
+import { DollarSign, TrendingDown, TrendingUp, CheckCircle, Zap, Building } from 'lucide-react';
 
 type Props = {
   theme: 'light' | 'dark';
@@ -45,23 +45,6 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
       { item: 'Monitoring & Analytics', cost: 0, provider: 'Vercel/Railway', usage: 'Built-in dashboards', critical: false }
     ],
     total: 705
-  };
-
-  const finetuningCosts = {
-    oneTime: [
-      { item: 'Data Labeling & Preparation', cost: 15000, provider: 'Contract workers', period: '2-3 months', critical: true },
-      { item: 'GPU Training Credits', cost: 8000, provider: 'AWS/GCP', period: 'Training runs', critical: true },
-      { item: 'ML Engineering Consultant', cost: 25000, provider: 'Contract ML engineer', period: '3-4 months', critical: true },
-      { item: 'Model Evaluation & Testing', cost: 5000, provider: 'QA & testing', period: 'Post-training', critical: true }
-    ],
-    monthly: [
-      { item: 'Model Hosting (Dedicated)', cost: 500, provider: 'AWS/GCP', note: 'GPU inference', critical: true },
-      { item: 'Retraining (per update)', cost: 8000, provider: 'AWS/GCP', note: 'Every canon update', critical: true },
-      { item: 'Storage & Infrastructure', cost: 200, provider: 'Cloud provider', note: 'Training data, checkpoints', critical: true }
-    ],
-    totalOneTime: 53000,
-    monthlyBase: 700,
-    retrainingFrequency: 'Every major canon update (~$8K each)'
   };
 
   const competitorComparison = [
