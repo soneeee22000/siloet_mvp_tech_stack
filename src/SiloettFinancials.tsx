@@ -11,11 +11,11 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
 
   const isDark = theme === 'dark';
   const pageBg = isDark ? 'bg-app-dark text-white' : 'bg-app-light text-slate-900';
-  const cardBg = isDark ? 'bg-gray-800 border-gray-700' : 'bg-white border-slate-200';
-  const innerCardBg = isDark ? 'bg-gray-900' : 'bg-slate-50';
+  const cardBg = isDark ? 'bg-gray-800/90 border-gray-600' : 'bg-white border-slate-300';
+  const innerCardBg = isDark ? 'bg-gray-900/80' : 'bg-slate-100/80';
   const muted = isDark ? 'text-gray-300' : 'text-slate-600';
   const textPrimary = isDark ? 'text-white' : 'text-slate-900';
-  const borderColor = isDark ? 'border-gray-700' : 'border-slate-200';
+  const borderColor = isDark ? 'border-gray-600' : 'border-slate-300';
 
   const mvpCosts = {
     oneTime: [
@@ -141,22 +141,22 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
           <div className="space-y-8">
             {/* Summary Cards */}
             <div className="grid md:grid-cols-4 gap-6">
-              <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white">
+              <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white shadow-xl">
                 <DollarSign className="w-8 h-8 mb-3 opacity-80" />
                 <div className="text-3xl font-bold mb-1">{formatCurrency(calculateMVPTotal())}</div>
                 <div className="text-sm opacity-90">Total MVP Cost (3 months)</div>
               </div>
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white">
+              <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white shadow-xl">
                 <TrendingDown className="w-8 h-8 mb-3 opacity-80" />
                 <div className="text-3xl font-bold mb-1">{formatCurrency(mvpCosts.monthly.reduce((sum, item) => sum + item.cost, 0))}</div>
                 <div className="text-sm opacity-90">Monthly Operating Cost</div>
               </div>
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white">
+              <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white shadow-xl">
                 <Zap className="w-8 h-8 mb-3 opacity-80" />
                 <div className="text-3xl font-bold mb-1">{formatCurrency(mvpCosts.oneTime.reduce((sum, item) => sum + item.cost, 0))}</div>
                 <div className="text-sm opacity-90">One-Time Setup Costs</div>
               </div>
-              <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-6 text-white">
+              <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-6 text-white shadow-xl">
                 <CheckCircle className="w-8 h-8 mb-3 opacity-80" />
                 <div className="text-3xl font-bold mb-1">$0</div>
                 <div className="text-sm opacity-90">Hidden Fees (None!)</div>
@@ -164,11 +164,11 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
             </div>
 
             {/* One-Time Costs */}
-            <div className={`${cardBg} rounded-xl p-6 border`}>
+            <div className={`${cardBg} rounded-xl p-6 border shadow-lg`}>
               <h2 className={`text-2xl font-bold ${textPrimary} mb-6`}>One-Time Setup Costs</h2>
               <div className="space-y-3">
                 {mvpCosts.oneTime.map((item, idx) => (
-                  <div key={idx} className={`flex items-center justify-between ${innerCardBg} rounded-lg p-4`}>
+                  <div key={idx} className={`flex items-center justify-between ${innerCardBg} rounded-lg p-4 border ${borderColor}`}>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <span className={`${textPrimary} font-semibold`}>{item.item}</span>
@@ -195,11 +195,11 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
             </div>
 
             {/* Monthly Costs */}
-            <div className={`${cardBg} rounded-xl p-6 border`}>
+            <div className={`${cardBg} rounded-xl p-6 border shadow-lg`}>
               <h2 className={`text-2xl font-bold ${textPrimary} mb-6`}>Monthly Operating Costs</h2>
               <div className="space-y-3">
                 {mvpCosts.monthly.map((item, idx) => (
-                  <div key={idx} className={`flex items-center justify-between ${innerCardBg} rounded-lg p-4`}>
+                  <div key={idx} className={`flex items-center justify-between ${innerCardBg} rounded-lg p-4 border ${borderColor}`}>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <span className={`${textPrimary} font-semibold`}>{item.item}</span>
@@ -228,7 +228,7 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
             </div>
 
             {/* Total Summary */}
-            <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-8 text-white">
+            <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-8 text-white shadow-2xl">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Total MVP Investment (3 Months)</h3>
@@ -247,17 +247,17 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
           <div className="space-y-8">
             {/* Summary Cards */}
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white">
+              <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white shadow-xl">
                 <DollarSign className="w-8 h-8 mb-3 opacity-80" />
                 <div className="text-3xl font-bold mb-1">{formatCurrency(productionCosts.total)}</div>
                 <div className="text-sm opacity-90">Monthly Operating Cost</div>
               </div>
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white">
+              <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white shadow-xl">
                 <TrendingUp className="w-8 h-8 mb-3 opacity-80" />
                 <div className="text-3xl font-bold mb-1">{formatCurrency(productionCosts.total * 12)}</div>
                 <div className="text-sm opacity-90">Annual Operating Cost</div>
               </div>
-              <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white">
+              <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white shadow-xl">
                 <CheckCircle className="w-8 h-8 mb-3 opacity-80" />
                 <div className="text-3xl font-bold mb-1">{Math.round((productionCosts.total / 45) * 100) / 100}x</div>
                 <div className="text-sm opacity-90">Cost Increase from MVP</div>
@@ -265,13 +265,13 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
             </div>
 
             {/* Production Costs Breakdown */}
-            <div className={`${cardBg} rounded-xl p-6 border`}>
+            <div className={`${cardBg} rounded-xl p-6 border shadow-lg`}>
               <h2 className={`text-2xl font-bold ${textPrimary} mb-4`}>Post-Funding Production Costs</h2>
               <p className={`${muted} mb-6`}>After securing funding, these are the monthly costs to operate SILOETT at production scale with real customers.</p>
               
               <div className="space-y-3">
                 {productionCosts.monthly.map((item, idx) => (
-                  <div key={idx} className={`flex items-center justify-between ${innerCardBg} rounded-lg p-4`}>
+                  <div key={idx} className={`flex items-center justify-between ${innerCardBg} rounded-lg p-4 border ${borderColor}`}>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <span className={`${textPrimary} font-semibold`}>{item.item}</span>
@@ -307,7 +307,7 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
 
             {/* Scaling Comparison */}
             <div className="grid md:grid-cols-2 gap-6">
-              <div className={`${cardBg} rounded-xl p-6 border`}>
+              <div className={`${cardBg} rounded-xl p-6 border shadow-lg`}>
                 <h3 className={`text-xl font-bold ${textPrimary} mb-4`}>MVP Stage (Now)</h3>
                 <div className="text-4xl font-bold text-green-400 mb-2">{formatCurrency(45)}/mo</div>
                 <ul className={`space-y-2 text-sm ${muted}`}>
@@ -317,7 +317,7 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
                   <li>• AI-assisted development</li>
                 </ul>
               </div>
-              <div className={`${cardBg} rounded-xl p-6 border`}>
+              <div className={`${cardBg} rounded-xl p-6 border shadow-lg`}>
                 <h3 className={`text-xl font-bold ${textPrimary} mb-4`}>Production (Post-Funding)</h3>
                 <div className="text-4xl font-bold text-blue-400 mb-2">{formatCurrency(productionCosts.total)}/mo</div>
                 <ul className={`space-y-2 text-sm ${muted}`}>
@@ -335,7 +335,7 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
         {selectedView === 'roi' && (
           <div className="space-y-8">
             {/* ROI Summary */}
-            <div className="bg-gradient-to-r from-purple-500 to-blue-600 rounded-xl p-8 text-white">
+            <div className="bg-gradient-to-r from-purple-500 to-blue-600 rounded-xl p-8 text-white shadow-2xl">
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
                   <div className="text-sm opacity-80 mb-1">MVP Investment</div>
@@ -353,7 +353,7 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
             </div>
 
             {/* Grant Opportunities */}
-            <div className={`${cardBg} rounded-xl p-6 border`}>
+            <div className={`${cardBg} rounded-xl p-6 border shadow-lg`}>
               <h2 className={`text-2xl font-bold ${textPrimary} mb-6`}>Funding Opportunities</h2>
               <div className="space-y-4">
                 {roiCalculation.potentialGrants.map((grant, idx) => (
@@ -388,7 +388,7 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
             </div>
 
             {/* First Year Revenue Potential */}
-            <div className={`${cardBg} rounded-xl p-6 border`}>
+            <div className={`${cardBg} rounded-xl p-6 border shadow-lg`}>
               <h2 className={`text-2xl font-bold ${textPrimary} mb-6`}>First Year Revenue Potential</h2>
               <div className="space-y-4">
                 {roiCalculation.firstYearRevenue.map((revenue, idx) => (
@@ -408,7 +408,7 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
                         <div className="text-xl font-bold text-blue-400">{formatCurrency(revenue.mrr)}</div>
                       </div>
                     </div>
-                    <div className={`${isDark ? 'bg-gray-800' : 'bg-slate-100'} rounded p-3`}>
+                    <div className={`${isDark ? 'bg-gray-800/70 border border-gray-700' : 'bg-slate-200/70 border border-slate-300'} rounded p-3`}>
                       <div className="flex justify-between">
                         <span className={`${muted} text-sm`}>Annual Recurring Revenue</span>
                         <span className={`text-lg font-bold ${textPrimary}`}>{formatCurrency(revenue.arr)}</span>
@@ -426,7 +426,7 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
             </div>
 
             {/* Break-Even Analysis */}
-            <div className="bg-green-500 bg-opacity-10 border-2 border-green-500 rounded-xl p-6">
+            <div className="bg-green-500 bg-opacity-10 border-2 border-green-500 rounded-xl p-6 shadow-lg">
               <h3 className={`text-xl font-bold ${textPrimary} mb-4`}>Break-Even Analysis</h3>
               <div className={`space-y-3 ${muted}`}>
                 <p>• <strong>MVP Investment:</strong> {formatCurrency(445)} (3 months to build)</p>
@@ -445,7 +445,7 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
 
         {/* Competitor Comparison */}
         {comparisonMode && (
-          <div className={`mt-12 ${cardBg} rounded-xl p-8 border animate-fadeIn`}>
+          <div className={`mt-12 ${cardBg} rounded-xl p-8 border shadow-lg animate-fadeIn`}>
             <h2 className={`text-2xl font-bold ${textPrimary} mb-6 flex items-center gap-2`}>
               <Building className="w-6 h-6" />
               Cost Comparison: Different Approaches
@@ -485,13 +485,13 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
             </div>
 
             <div className="mt-6 grid md:grid-cols-2 gap-6">
-              <div className="bg-green-500 bg-opacity-10 border border-green-500 rounded-lg p-4">
+              <div className="bg-green-500 bg-opacity-10 border-2 border-green-500 rounded-lg p-4 shadow-md">
                 <h4 className="text-green-400 font-semibold mb-2">SILOETT Advantage</h4>
                 <p className={`text-sm ${muted}`}>
                   <strong>337x cheaper</strong> than traditional development, <strong>180x cheaper</strong> than agency build, and <strong>119x cheaper</strong> than fine-tuning approach.
                 </p>
               </div>
-              <div className="bg-red-500 bg-opacity-10 border border-red-500 rounded-lg p-4">
+              <div className="bg-red-500 bg-opacity-10 border-2 border-red-500 rounded-lg p-4 shadow-md">
                 <h4 className="text-red-400 font-semibold mb-2">Fine-Tuning Hidden Costs</h4>
                 <p className={`text-sm ${muted}`}>
                   {formatCurrency(53000)} upfront + {formatCurrency(8000)} per canon update. RAG updates are instant and free.
@@ -503,19 +503,19 @@ const SiloettFinancials: React.FC<Props> = ({ theme }) => {
 
         {/* Key Insights */}
         <div className="grid md:grid-cols-3 gap-6 mt-12">
-          <div className="bg-green-500 bg-opacity-10 border-2 border-green-500 rounded-xl p-6">
+          <div className="bg-green-500 bg-opacity-10 border-2 border-green-500 rounded-xl p-6 shadow-lg">
             <TrendingDown className="w-8 h-8 text-green-400 mb-3" />
             <h3 className={`text-lg font-semibold ${textPrimary} mb-2`}>Minimal Upfront Investment</h3>
             <p className={`text-sm ${muted}`}>Just {formatCurrency(445)} to build a complete MVP. No salaries, no overhead, no long-term commitments.</p>
           </div>
           
-          <div className="bg-blue-500 bg-opacity-10 border-2 border-blue-500 rounded-xl p-6">
+          <div className="bg-blue-500 bg-opacity-10 border-2 border-blue-500 rounded-xl p-6 shadow-lg">
             <DollarSign className="w-8 h-8 text-blue-400 mb-3" />
             <h3 className={`text-lg font-semibold ${textPrimary} mb-2`}>Predictable Scaling</h3>
             <p className={`text-sm ${muted}`}>Production costs scale linearly with usage. Start at ~{formatCurrency(300)}/mo, grow to ~{formatCurrency(700)}/mo with customers.</p>
           </div>
           
-          <div className="bg-purple-500 bg-opacity-10 border-2 border-purple-500 rounded-xl p-6">
+          <div className="bg-purple-500 bg-opacity-10 border-2 border-purple-500 rounded-xl p-6 shadow-lg">
             <TrendingUp className="w-8 h-8 text-purple-400 mb-3" />
             <h3 className={`text-lg font-semibold ${textPrimary} mb-2`}>Exceptional ROI</h3>
             <p className={`text-sm ${muted}`}>1,292x return potential through grants. Break-even with just 1 pilot customer at {formatCurrency(5000)}/mo.</p>
