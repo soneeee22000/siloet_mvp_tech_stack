@@ -5,6 +5,7 @@ import SiloettArchitecture from './SiloettArchitecture';
 import ComparisonMatrix from './ComparisonMatrix';
 import Navigation from './Navigation';
 import SiloettUiMockup from './SiloettUiMockup';
+import SiloettRoadmap from './SiloettRoadmap';
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -25,6 +26,7 @@ const App: React.FC = () => {
           <Route path="/" element={<SiloettArchitecture theme={theme} />} />
           <Route path="/comparison" element={<ComparisonMatrix theme={theme} />} />
           <Route path="/ui-mockup" element={<SiloettUiMockup theme={theme} />} />
+          <Route path="/roadmap" element={<SiloettRoadmap theme={theme} />} />
         </Routes>
       </div>
     </Router>
