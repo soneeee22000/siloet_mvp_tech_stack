@@ -379,8 +379,8 @@ GROUNDING NOTES:
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-sm">{example.query}</span>
-                        <Play className="w-4 h-4" />
+                        <span className={`text-sm ${softText}`}>{example.query}</span>
+                        <Play className={`w-4 h-4 ${softText}`} />
                       </div>
                     </button>
                   ))}
@@ -402,7 +402,7 @@ GROUNDING NOTES:
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-6 border-t border-gray-700">
+                  <div className={`mt-6 pt-6 border-t ${isDark ? 'border-gray-700' : 'border-slate-200'}`}>
                     <h4 className={`text-sm font-semibold mb-3 flex items-center gap-2 ${mutedText}`}>
                       <FileText className="w-4 h-4" />
                       SOURCE CITATIONS
